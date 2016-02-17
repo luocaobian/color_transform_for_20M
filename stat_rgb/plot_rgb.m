@@ -3,7 +3,7 @@ function [  ] = plot_rgb(stat)
 %   Detailed explanation goes here
 
 figure;
-ylim([-100000 100000]);
+ylim([-1000000 1000000]);
 hold on;
 plot(stat(:,1),'r');
 plot(stat(:,2),'g');
