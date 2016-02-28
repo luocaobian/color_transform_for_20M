@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DB6E14CA1C73C1F5004A0D69 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DB6E14C91C73C1F5004A0D69 /* main.cpp */; };
+		DBCB65081C77C0230029D584 /* colorTransform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DBCB65061C77C0230029D584 /* colorTransform.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		DB6E14C61C73C1F5004A0D69 /* ColorTransformCPP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ColorTransformCPP; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6E14C91C73C1F5004A0D69 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		DBCB65061C77C0230029D584 /* colorTransform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = colorTransform.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		DB6E14C81C73C1F5004A0D69 /* ColorTransformCPP */ = {
 			isa = PBXGroup;
 			children = (
+				DBCB65061C77C0230029D584 /* colorTransform.cpp */,
 				DB6E14C91C73C1F5004A0D69 /* main.cpp */,
 			);
 			path = ColorTransformCPP;
@@ -118,6 +121,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBCB65081C77C0230029D584 /* colorTransform.cpp in Sources */,
 				DB6E14CA1C73C1F5004A0D69 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,6 +241,7 @@
 				DB6E14CF1C73C1F5004A0D69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
