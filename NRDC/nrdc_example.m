@@ -5,7 +5,7 @@ Src             = double(imread(Src_path)) / 255.0;
 Ref             = double(imread(Ref_path)) / 255.0;
 
 %% Reduce size if source image is too big
-OriginalSource = Src; % Keep the original source before changing its size.
+% OriginalSource = Src; % Keep the original source before changing its size.
 % rf = max(max(size(Src)))  / 640;
 % if (rf > 1)
 %     disp('source image is too big. resize automatically.')
