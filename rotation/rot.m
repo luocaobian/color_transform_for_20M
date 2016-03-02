@@ -2,8 +2,8 @@ function [res_img] = rot(fname, angle)
 
 img = imread(fname);
 
-for row = 1:4
-    for col = 1:4
+for row = 1:7
+    for col = 1:7
         rs = 1 + (row-1)*720;
         re = row*720;
         cs = 1 + (col-1)*1280;
