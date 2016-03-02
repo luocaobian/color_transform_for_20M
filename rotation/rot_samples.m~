@@ -1,0 +1,34 @@
+function [res_img] = rot(fname, angle)
+
+img = imread(fname);
+wid = 640;
+hgt = 360;
+
+for row = 1:11
+    if row == 1
+    else
+        rs = 1+(row-1)*360;
+        
+        res_img = imrotate(
+
+
+for row = 1:9
+    for col = 1:9
+        rs = 1 + (row-1)*360;
+        re = row*360;
+        cs = 1 + (col-1)*640;
+        ce = col*640;        
+        if col == 1
+            row_img = imrotate(img(rs:re, cs:ce, :),angle);
+        else
+            row_img = cat(2, row_img, imrotate(img(rs:re, cs:ce, :),angle));
+        end
+    end
+    
+    if row == 1
+        res_img = row_img;
+    else
+        res_img = cat(1, res_img, row_img);
+    end
+end
+end
