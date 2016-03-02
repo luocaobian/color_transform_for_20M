@@ -1,0 +1,18 @@
+function [  ] = cat_samples( in_path, out_path )
+%CAT_SAMPLES Summary of this function goes here
+%   Detailed explanation goes here
+
+tic;
+
+
+big_pic = imresize(imread(cat(in_path,'000000.png'),0.5,'nearest'));
+for i = 1:10
+    big_pic = cat(1, big_pic, imresize(imread(cat(in_path,'0000)),0.5,'nearest'));
+end
+
+imwrite(big_pic, strcat(out_path,'.png'));
+
+toc
+
+end
+

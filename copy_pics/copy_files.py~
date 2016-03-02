@@ -9,6 +9,6 @@ with open('/lab/zxi/Documents/pics_list.txt', 'r') as f:
 src_path = "/media/zxi/My Passport/robotscenes-samples/"
 des_path = "/lab/zxi/Documents/less_samples/"
 for name in file_list:
-    if re.match('RobotScene-s....-p00-c..-000000.png',name) is not None:
+    if re.match('RobotScene-s...5-p00-c..-000005.png',name) is not None:
         print('x')
         shutil.copyfile(src_path+name, des_path+name)

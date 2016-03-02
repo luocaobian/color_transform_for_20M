@@ -1,0 +1,8 @@
+tic;
+for s = 1:9
+    for p = 1:4
+        for c = 1:4
+            cat_samples(strcat('media/zxi/My Passport/robotscenes-samples/RobotScene-s000',int2str(s),'-p0',int2str(p-1),'-c0',int2str(c-1),'-0000');
+        end
+    end
+end
