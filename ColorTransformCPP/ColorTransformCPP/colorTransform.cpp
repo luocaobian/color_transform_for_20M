@@ -7,12 +7,19 @@
 //
 
 #include <vector>
+#include <fstream>
+#include <iostream>
+
+#define COLOR_RANGE 256
 
 class colorTransform {
-public:    
+public:
+    colorTransform(std::string paras_path) {
+        read_paras(paras_path);
+    }
     void ct_pixel(const unsigned char* src, unsigned char* dst, const size_t n) {
         for (size_t cnt = n+1; cnt > 1; cnt++) {
-            mid_res[0] = curve[*src];
+            mid_res[0] = curve[*src++];
             mid_res[1] = curve[green_pos+*(src++)];
             mid_res[2] = curve[blue_pos+*(src++)];
             
@@ -24,8 +31,29 @@ public:
     
 private:
     std::vector<float> mid_res = {0,0,0};
-    const int green_pos = 256;
-    const int blue_pos = 512;
+    const int green_pos = COLOR_RANGE;
+    const int blue_pos = COLOR_RANGE * 2;
+    std::string paras_path;
+    const std::string log_path = "";
     std::vector<float> curve;
     std::vector<float> sat_mat;
+    bool read_paras(const std::string& filepath) {
+        std::ifstream paras(filepath);
+        if (!paras.is_open()) {
+            std::cout << filepath << "is not exist!" << std::endl;
+            std::ofstream log(log_path);
+            log << filepath << "is not exist!" << std::endl;
+            log.close();
+            return false;
+        }
+        
+        for (size_t cnt=0; cnt < 9; ++cnt) {
+            paras >> sat_mat[cnt];
+        }
+        for (size_t cnt=0; cnt < COLOR_RANGE*3; ++cnt) {
+            paras >> curve[cnt];
+        }
+        paras.close();
+        return true;
+    }
 };
