@@ -1,55 +1,16 @@
-in = '/media/zxi/My Passport/robotscenes-samples/';
-out = '/lab/zxi/Documents/added_samples/';
-% parfor s = 1:9
-%     for p = 1:4
-%         for c = 1:4
-%             file = strcat('RobotScene-s000',int2str(s),'-p0',int2str(p-1),'-c0',int2str(c-1));
-%             cat_samples(strcat(in,file),strcat(out,file));
-%         end
-%     end
-% end
-% 
-for s = 19:19
+in = '/lab/zxi/Documents/recopy_samples/';
+out = '/lab/zxi/Documents/recat_samples/';
+
+for s = 1:1000
+	sstr = sprintf('%04d',s);
     for p = 1:4
-        parfor c = 1:4
-            file = strcat('RobotScene-s00',int2str(s),'-p0',int2str(p-1),'-c0',int2str(c-1));
-            cat_samples(strcat(in,file),strcat(out,file));
-        end
-    end
-end
-% 
-% for s = 100:999
-%     for p = 1:4
-%         parfor c = 1:4
-%             file = strcat('RobotScene-s0',int2str(s),'-p0',int2str(p-1),'-c0',int2str(c-1));
-%             cat_samples(strcat(in,file),strcat(out,file));
-%         end
-%     end
-% end
-% 
-% for s = 1000:1000
-%     parfor p = 1:4
-%         for c = 1:4
-%             file = strcat('RobotScene-s',int2str(s),'-p0',int2str(p-1),'-c0',int2str(c-1));
-%             cat_samples(strcat(in,file),strcat(out,file));
-%         end
-%     end
-% end
-
-for s = 3000:3001
-    parfor p = 1:10
+        pstr = sprintf('%02d',p-1);
         for c = 1:4
-            file = strcat('RobotScene-s',int2str(s),'-p0',int2str(p-1),'-c0',int2str(c-1));
+            cstr = sprintf('%02d',c-1);
+            file = strcat('RobotScene-s',sstr,'-p',pstr,'-c',cstr);
             cat_samples(strcat(in,file),strcat(out,file));
         end
     end
 end
 
-for s = 3000:3001
-    parfor p = 11:21
-        for c = 1:4
-            file = strcat('RobotScene-s',int2str(s),'-p',int2str(p-1),'-c0',int2str(c-1));
-            cat_samples(strcat(in,file),strcat(out,file));
-        end
-    end
-end
+rot_example
