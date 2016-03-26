@@ -1,6 +1,6 @@
 %% Read files
-% Src_path        = 'c01.jpg'; % src filename
-% Ref_path        = 'c00.jpg'; % ref filename    
+ Src_path        = '/Users/zxi/Documents/MyCode/color_transform_for_20M/pics/RobotScene-s0001-p00-c03.png'; % src filename
+ Ref_path        = '/Users/zxi/Documents/MyCode/color_transform_for_20M/pics/RobotScene-s0001-p00-c00.png'; % ref filename    
 Src             = double(imread(Src_path)) / 255.0;
 Ref             = double(imread(Ref_path)) / 255.0;
 

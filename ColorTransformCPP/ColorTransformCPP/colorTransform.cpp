@@ -17,8 +17,8 @@ public:
     colorTransform(std::string paras_path) {
         read_paras(paras_path);
     }
-    void ct_pixel(const unsigned char* src, unsigned char* dst, const size_t n) {
-        for (size_t cnt = n+1; cnt > 1; cnt++) {
+    void ct_pixel(unsigned char* src, unsigned char* dst, const size_t n) {
+        for (size_t cnt = n+1; cnt > 1; cnt--) {
             mid_res[0] = curve[*src++];
             mid_res[1] = curve[green_pos+*(src++)];
             mid_res[2] = curve[blue_pos+*(src++)];
@@ -40,13 +40,15 @@ private:
     bool read_paras(const std::string& filepath) {
         std::ifstream paras(filepath);
         if (!paras.is_open()) {
-            std::cout << filepath << "is not exist!" << std::endl;
+            std::cout << filepath << " is not exist!" << std::endl;
             std::ofstream log(log_path);
-            log << filepath << "is not exist!" << std::endl;
+            log << filepath << " is not exist!" << std::endl;
             log.close();
             return false;
         }
         
+        sat_mat.resize(9);
+        curve.resize(COLOR_RANGE*3);
         for (size_t cnt=0; cnt < 9; ++cnt) {
             paras >> sat_mat[cnt];
         }

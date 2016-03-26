@@ -12,11 +12,13 @@ for rgb=1:3
             points(pnt,rgb) = 1;
         end
         if points(257-pnt,rgb) < 0
-            points(257-pnt,rgb) = 0
+            points(257-pnt,rgb) = 0;
         end
     end
 end
 % save(out_path,'satcoef','points','-ascii','-single');
+
+points = points*255;
 
 f = fopen(out_path,'wt');
 fprintf(f,'%f\n',sat_mat);
